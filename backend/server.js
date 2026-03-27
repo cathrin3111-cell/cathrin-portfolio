@@ -23,7 +23,7 @@ app.post('/api/contact', (req, res) => {
 
     const sql = "INSERT INTO contacts (name, email, message) VALUES ($1, $2, $3)";
 
-    db.query(sql, [name, email, message], (err, result) => {
+    pool.query(sql, [name, email, message], (err, result) => {
         if (err) {
             console.error('DB error:', err);
             return res.status(500).json({ error: 'Database error' });
