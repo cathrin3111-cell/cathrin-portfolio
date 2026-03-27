@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/cathrin3111-cell/cathrin-portfolio/issues"
   },
-  "homepage": "https://github.com/cathrin3111-cell/cathrin-portfolio#readme"
+  "homepage": "https://github.com/cathrin3111-cell/cathrin-portfolio#readme",
+  "dependencies": {
+    "cors": "^2.8.6"
+  }
 }
