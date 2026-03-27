@@ -32,6 +32,11 @@ app.post('/api/contact', (req, res) => {
     });
 });
 
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
+});
+app.get('/api/messages', async (req, res) => {
+  const result = await pool.query('SELECT * FROM contacts');
+  res.json(result.rows);
 });
