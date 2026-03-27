@@ -21,18 +21,17 @@ app.post('/api/contact', (req, res) => {
         return res.status(400).json({ error: 'Please fill all fields' });
     }
 
-    const sql = "INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)";
+    const sql = "INSERT INTO contacts (name, email, message) VALUES ($1, $2, $3)";
 
     db.query(sql, [name, email, message], (err, result) => {
         if (err) {
-            console.log(err);
+            console.error('DB error:', err);
             return res.status(500).json({ error: 'Database error' });
-        } else {
-            res.json({ success: true, message: 'Message sent successfully!' });
         }
+        res.json({ success: true, message: 'Message sent successfully!' });
     });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is live and running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
