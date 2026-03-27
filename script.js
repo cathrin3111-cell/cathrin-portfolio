@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-       fetch('https://cathrin-portfolio.onrender.com'), {
+ fetch('https://cathrin-portfolio.onrender.com/api/contact', {
+    
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, message })
