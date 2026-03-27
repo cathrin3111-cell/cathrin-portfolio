@@ -6,7 +6,7 @@ const db = require('./db');
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: 'https://cathrin.github.io'
+    origin: 'https://cathrin3111-cell.github.io'
 }));
 app.use(express.json());
 
